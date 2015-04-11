@@ -3,7 +3,7 @@ $(document).ready(function(){
 	
 	var chosenNumber = Math.floor((Math.random() * 100) + 1);
 	
-	
+	var count = 0;
 
 	/*--- Display information modal box ---*/
   	$(".what").click(function(){
@@ -21,12 +21,16 @@ $(document).ready(function(){
   			if (guess>0 && guess%1===0 && guess<100){
   				$("ul.guessBox").append("<li>"+ guess +"</li>");
   				$("#userGuess").val("");
+  				$("#count").text(count+1);
+  				count = count +1;
   			}
   			else {
   				window.alert("Please enter a valid integer between 1 and 100.");
   				$("#userGuess").val("");
   			}
   	});
+
+
 
 });
 
