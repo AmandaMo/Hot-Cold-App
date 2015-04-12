@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 	
-	var chosenNumber = Math.floor((Math.random() * 100) + 1);
+	chosenNumber = Math.floor((Math.random() * 100) + 1);
 	console.log(chosenNumber);
 	count = 0;
 
@@ -33,6 +33,10 @@ $(document).ready(function(){
   			}
   	});
 
+  	$(".new").click(function(){
+  		newGame();
+  	});
+
   	function testNumber(){
   		if (chosenNumber-guess>=50){
   			$("#feedback").text("Ice Cold");
@@ -55,13 +59,14 @@ $(document).ready(function(){
   	}
 
   	function newGame(){
-  		var chosenNumber = Math.floor((Math.random() * 100) + 1);
+  		chosenNumber = Math.floor((Math.random() * 100) + 1);
 		console.log(chosenNumber);
 		count = 0;
 		guess = 0;
+		$("#feedback").text("Make your Guess!");
 		$("#count").text(count);
 		$("#userGuess").val("");
-		$("ul.guessBox" + li).remove();
+		$("ul.guessBox").empty();
   	}
 
 });
