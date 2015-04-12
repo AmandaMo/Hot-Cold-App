@@ -38,19 +38,20 @@ $(document).ready(function(){
   	});
 
   	function testNumber(){
-  		if (chosenNumber-guess>=50){
+  		console.log(guess);
+  		if (Math.abs(chosenNumber-guess)>=50){
   			$("#feedback").text("Ice Cold");
   		}
-  		else if (chosenNumber-guess<50 && chosenNumber-guess>=30){
+  		else if (Math.abs(chosenNumber-guess)<50 && Math.abs(chosenNumber-guess)>=30){
   			$("#feedback").text("Cold");
   		}
-  		else if (chosenNumber-guess>=20 && chosenNumber-guess<30){
+  		else if (Math.abs(chosenNumber-guess)>=20 && Math.abs(chosenNumber-guess)<30){
   			$("#feedback").text("warm");
   		}
-  		else if (chosenNumber-guess<20 && chosenNumber-guess>=10){
+  		else if (Math.abs(chosenNumber-guess)<20 && Math.abs(chosenNumber-guess)>=10){
   			$("#feedback").text("hot");
   		}
-  		else if (chosenNumber-guess<10 && chosenNumber-guess!==0){
+  		else if (Math.abs(chosenNumber-guess)<10 && Math.abs(chosenNumber-guess)!==0){
   			$("#feedback").text("very hot");
   		}
   		else{
