@@ -18,7 +18,8 @@ $(document).ready(function(){
   		$(".overlay").fadeOut(1000);
   	});
 
-  	$("input.button").click(function(){
+  	$("input.button").click(function(event){
+  		event.preventDefault();
   		guess= $("#userGuess").val();
   			if (guess>0 && guess%1===0 && guess<100){
   				$("ul.guessBox").append("<li>"+ guess +"</li>");
